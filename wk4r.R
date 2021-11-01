@@ -12,7 +12,7 @@ gender_diff <- read_csv(here::here("data", "Gender Inequality Index (GII).csv"),
 #load world data
 worldshp <- st_read(here("data", "World_Countries__Generalized_.shp")) %>%
   #join the data
-  left_join(., gender_data, by = c("COUNTRY"="country"))
+  left_join(., gender_diff, by = c("COUNTRY"="country"))
 
 #plot data
 library(tmap)
@@ -23,9 +23,7 @@ m <- tm_shape(worldshp) +
               palette="YlOrRd", n = 5,
               midpoint=0,
               title="Gender Inequality Differences",
-              alpha = 0.5) + 
-  tm_compass(position = c("left", "top"),type = "arrow") + 
-  tm_scale_bar(position = c("left", "bottom")) +
+              alpha = 0.5) +
   tm_layout(title="CASA0005Week4", legend.outside = TRUE, legend.position = c("right", "bottom"))
 
 tmap_save(m, "map.png")

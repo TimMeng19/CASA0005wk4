@@ -41,5 +41,3 @@ tm_shape(worldshp) +
               alpha = 0.5) + 
   tm_layout(title="CASA0005Week4", legend.outside = TRUE, legend.position = c("right", "bottom"))
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

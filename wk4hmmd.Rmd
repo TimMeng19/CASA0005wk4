@@ -35,8 +35,8 @@ tmap_mode("plot")
 tm_shape(worldshp) + 
   tm_polygons("diff", 
               style="pretty",
-              palette="YlOrRd", n = 5,
-              midpoint=0,
+              palette="-YlOrRd", n = 5,
+              midpoint=-0.2,
               title="Gender Inequality Differences",
               alpha = 0.5) + 
   tm_layout(title="CASA0005Week4", legend.outside = TRUE, legend.position = c("right", "bottom"))
